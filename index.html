@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICS Parser</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <h1>ICS Parser</h1>
+        <div class="file-tabs">
+          <div id="file-tab-list" class="file-tab-list"></div>
+          <button id="add-tab-button" type="button" class="add-tab-button" title="New tab" aria-label="New tab">+</button>
+        </div>
+      </header>
+      <section class="card">
+        <div id="tab-panels" class="tab-panels"></div>
+      </section>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

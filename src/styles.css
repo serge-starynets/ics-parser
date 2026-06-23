@@ -1,0 +1,404 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background: #f7f7f8;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 1.25rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.file-tabs {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  flex: 1;
+  min-width: 0;
+  justify-content: flex-end;
+}
+
+.file-tab-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.file-tab-item {
+  display: inline-flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  border: 1px solid #d4d4d8;
+  border-radius: 0.5rem;
+  background: #fff;
+  overflow: hidden;
+}
+
+.file-tab-item.active {
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+.file-tab-close {
+  border: 0;
+  border-right: 1px solid #e4e4e7;
+  border-radius: 0;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1;
+  background: transparent;
+  color: #71717a;
+}
+
+.file-tab-close:hover {
+  background: #f4f4f5;
+  color: #18181b;
+}
+
+.file-tab-close.hidden {
+  display: none;
+}
+
+.file-tab-item.active .file-tab-close {
+  border-right-color: #bfdbfe;
+}
+
+.file-tab-select {
+  border: 0;
+  background: transparent;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.file-tab-item.active .file-tab-select {
+  color: #1d4ed8;
+}
+
+.add-tab-button {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  font-size: 1.35rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tab-panels {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.file-tab-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.file-tab-panel.hidden {
+  display: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e4e4e7;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+.file-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.file-meta {
+  font-size: 0.9rem;
+  color: #52525b;
+}
+
+.file-meta.hidden {
+  display: none;
+}
+
+.output-format {
+  margin: 1rem 0;
+  flex-shrink: 0;
+}
+
+.output-format legend {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.output-format label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+button,
+input[type='file']::file-selector-button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button {
+  border: 1px solid #d4d4d8;
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 0.55rem 1rem;
+}
+
+button.primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #e4e4e7;
+  margin: 1.5rem 0 0;
+  flex-shrink: 0;
+}
+
+.result-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.result-section.hidden {
+  display: none;
+}
+
+.result-layout {
+  display: flex;
+  gap: 1.25rem;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.result-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.summary-panel {
+  width: 17rem;
+  flex-shrink: 0;
+  align-self: stretch;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1rem;
+  border: 1px solid #e4e4e7;
+  border-radius: 0.5rem;
+  background: #fafafa;
+}
+
+.summary-panel.hidden {
+  display: none;
+}
+
+.summary-panel h2 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}
+
+.summary-list {
+  margin: 0;
+}
+
+.summary-list dt {
+  margin: 0 0 0.2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+  color: #3f3f46;
+}
+
+.summary-list dt strong {
+  font-weight: 700;
+}
+
+.summary-list dd {
+  margin: 0 0 0.9rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.9rem;
+}
+
+.summary-list dd:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .result-layout {
+    flex-direction: column;
+  }
+
+  .result-panel {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .summary-panel {
+    width: auto;
+    flex: 0 1 40%;
+    min-height: 8rem;
+  }
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  flex-shrink: 0;
+}
+
+.result-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.result-tabs {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.result-tabs button.active {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+}
+
+.result-output {
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid #e4e4e7;
+  border-radius: 0.5rem;
+  background: #fafafa;
+  overflow-y: auto;
+  overflow-x: auto;
+  word-break: break-word;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+}
+
+.result-line {
+  white-space: pre-wrap;
+}
+
+.result-output strong {
+  font-weight: 700;
+}
+
+.download-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.error-message {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  flex-shrink: 0;
+}
+
+.error-message.hidden,
+.status-message.hidden {
+  display: none;
+}
+
+.status-message {
+  margin-top: 1rem;
+  color: #52525b;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
